@@ -23,20 +23,22 @@ import PermIdentityIcon from '@material-ui/icons/PermIdentity';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import { CircularProgress, Menu, MenuItem } from '@material-ui/core';
 
-const useStyles = makeStyles((theme: Theme) => createStyles({
-  root: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  profileButton: {
-    marginLeft: theme.spacing(2),
-  },
-  title: {
-    flexGrow: 1,
-  },
-}));
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      flexGrow: 1,
+    },
+    menuButton: {
+      marginRight: theme.spacing(2),
+    },
+    profileButton: {
+      marginLeft: theme.spacing(2),
+    },
+    title: {
+      flexGrow: 1,
+    },
+  })
+);
 
 const drawerStyles = makeStyles({
   list: {
@@ -66,16 +68,16 @@ const MainLayout = () => {
       { title: 'Send email', path: 'send-email' },
       { title: 'Drafts', path: 'drafts' },
     ],
-    [],
+    []
   );
 
   const toggleDrawer = (open: boolean) => (
-    event: React.KeyboardEvent | React.MouseEvent,
+    event: React.KeyboardEvent | React.MouseEvent
   ) => {
     if (
-      event.type === 'keydown'
-      && ((event as React.KeyboardEvent).key === 'Tab'
-        || (event as React.KeyboardEvent).key === 'Shift')
+      event.type === 'keydown' &&
+      ((event as React.KeyboardEvent).key === 'Tab' ||
+        (event as React.KeyboardEvent).key === 'Shift')
     ) {
       return;
     }
@@ -182,11 +184,11 @@ const MainLayout = () => {
               const Dashboard = lazy(() => import('../dashboard/Dashboard'));
               return (
                 <Suspense
-                  fallback={(
+                  fallback={
                     <div className="h-100 w-100 d-flex flex-jc-center flex-ai-center">
                       <CircularProgress />
                     </div>
-                  )}
+                  }
                 >
                   <Dashboard />
                 </Suspense>
