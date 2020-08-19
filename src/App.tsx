@@ -4,13 +4,6 @@ import { CircularProgress } from '@material-ui/core';
 import history from './history';
 
 const App: React.FC = (): JSX.Element => (
-  
-  
-  
-  
-  
-  
-  
   <div className="w-100 h-100">
     <Router history={history}>
       <Switch>
